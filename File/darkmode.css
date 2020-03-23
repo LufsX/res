@@ -5,11 +5,11 @@
     }
 
     a, a:visited {
-        color: #369fe4;
+        color: #7575AB;
     }
 
     a:active, a:focus, a:hover {
-        color: #369fe4;
+        color: #7575AB;
         opacity: .75;
     }
 
@@ -17,12 +17,12 @@
     #post-content a:hover,
     #post-content a:focus,
     #post-content a:visited {
-        color: #369fe4;
+        color: #7575AB;
         opacity: 1;
     }
 
     .post-entry .card-body a {
-        color: #369fe4;
+        color: #7575AB;
     }
 
     .avatar {
@@ -32,11 +32,11 @@
     .navbar-link,
     .navbar-link:visited,
     .timeline .timeline-item .timeline-icon.icon-lg {
-        color: #369fe4;
+        color: #7575AB;
     }
 
     .navbar-link:hover {
-        color: #369fe4;
+        color: #7065A3;
         opacity: .8;
     }
 
