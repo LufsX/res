@@ -1,3 +1,7 @@
+/**
+修改于 20.03.24
+优化了配色
+**/
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #121212;
@@ -32,7 +36,7 @@
     .navbar-link,
     .navbar-link:visited,
     .timeline .timeline-item .timeline-icon.icon-lg {
-        color: #7575AB;
+        color:#8b81c3;
     }
 
     .navbar-link:hover {
@@ -44,8 +48,8 @@
     #disqus_click_btn,
     #disqus-switch-to-direct,
     #disqus-loadmore-button {
-        background:#727e96;
-        border-color: #727e96;
+        background: #765DA4;
+        border-color: #765DA4;
         color: #e1e1e1;
     }
 
@@ -78,7 +82,7 @@
 /* Override the Spectre.css */
 
 .text-gray {
-    color: #ced2da;
+    color: #9b90c2;
 }
 
 .bg-gray {
@@ -382,3 +386,7 @@ a.category-link {
 
 
 }
+/**
+20.03.23
+更改主题颜色
+**/
