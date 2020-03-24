@@ -1,6 +1,6 @@
 /**
-修改于 20.03.24
-优化了配色
+修改于 20.03.25
+添加了 DisqusJS 评论系统
 **/
 @media (prefers-color-scheme: dark) {
     body {
@@ -384,9 +384,46 @@ a.category-link {
     color: #d9dce2;
 }
 
+/**
+ * =========================================================
+ * ************   DisqusJS   ************
+ * =========================================================
+ */
+
+ 
+ #dsqjs a {
+    color:#9e8ee2
+}
+
+#dsqjs .dsqjs-nav {
+    border-bottom:2px solid #363636
+}    
+
+#dsqjs .dsqjs-nav-tab {
+    color: #707070
+}
+
+#dsqjs .dsqjs-tab-active > span:after {
+    background-color: #ce8cff !important;
+}
+
+#dsqjs .dsqjs-post-body {
+    color:#e1e1e1
+}
+
+#dsqjs .dsqjs-order-radio:checked + .dsqjs-order-label {
+    color: #e1e1e1;
+    background-color: #757575
+}
+   
+#dsqjs .dsqjs-order-label {
+    background-color: #383838;
+}
 
 }
 /**
 20.03.23
 更改主题颜色
+20.03.24
+优化了配色
 **/
