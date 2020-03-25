@@ -391,7 +391,7 @@ a.category-link {
  */
 
  
-#dsqjs a {
+ #dsqjs a {
     color:#9e8ee2
 }
 
@@ -407,8 +407,7 @@ a.category-link {
     background-color: #ce8cff !important;
 }
 
-#dsqjs .dsqjs-post-body,
-#dsqjs .dsqjs-no-comment {
+#dsqjs .dsqjs-post-body {
     color:#e1e1e1
 }
 
