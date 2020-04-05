@@ -1,10 +1,11 @@
 /**
-修改于 20.03.27
-代码框跟随变色
+修改于 20.04.05
+优化时间线、密码框配色
+修改背景色
 **/
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #121212;
+        background-color: #000000;
         color: #e1e1e1;
     }
 
@@ -230,28 +231,17 @@ a.category-link {
 /* Post TOC */
 
 #post-card .post-license {
-    margin: 0 0 1rem;
-    padding: .5rem .8rem;
-    border-left: 3px solid #F44336;
     background-color: #282828;
-    list-style: none;
-    word-break: break-all;
 }
 
 #post-card .post-expired-notify {
-    margin: 0 0 1rem;
-    padding: .5rem .8rem;
-    background: #ff6500;
-    border-left: 3px solid #ffe500;
-    list-style: none;
+    background: #282828;
 }
 
 
 #post-card .card-footer.post-comment {
-    padding: 1.5rem;
     background-color: #1d1d1d;
 }
-
 
 /**
  * =========================================================
@@ -352,12 +342,16 @@ a.category-link {
  a.timeline-tile-title,
  a.timeline-tile-title span,
  a.timeline-tile-title:visited {
-     color: #fafbfb;
- }
+    color: #fafbfb;
+}
  
  a.timeline-tile-title span:hover {
-     color: #caced7;
- }
+    color: #caced7;
+}
+
+.timeline .timeline-item::before {
+    background: #a2a2a2;
+}
 
 /**
  * =========================================================
@@ -431,10 +425,22 @@ a.category-link {
 .highlight {
     color: #666;
     background:#252525
-    }
+}
+
+/**
+ * =========================================================
+ * ************   Encrypt   ************
+ * =========================================================
+ */
+
+#hbePass {
+    background:#1d1d1d
+}
 
 }
 /**
+20.03.27
+代码框跟随变色
 20.03.25
 添加了 DisqusJS 评论系统
 20.03.23
