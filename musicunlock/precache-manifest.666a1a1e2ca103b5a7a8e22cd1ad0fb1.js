@@ -1,4 +1,4 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>self.__precacheManifest = (self.__precacheManifest || []).concat([
+self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "bb915e3a9cef7fd49b9dd64c5fba02e6",
     "url": "1350ace9da614ffd80e3.worker.js"
