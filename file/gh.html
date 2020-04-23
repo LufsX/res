@@ -20,6 +20,27 @@ body {
     background-color: #fff;
 }
 
+h1 {
+  text-align: left;
+  color: #444;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.4em;
+  font-size: 2em;
+  text-align: center;
+}
+
+.flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+
+/*submit hidden*/
+.submit {
+    display: none;
+}
+
 .url {
     font-size: 18px;
     padding: 10px 10px 10px 10px;
@@ -31,6 +52,7 @@ body {
     color: #444;
 }
 
+/*buttons*/
 .buttons {
   display: flex;
   flex-direction: row;
@@ -53,10 +75,7 @@ body {
   width: 240px;
 }
 
-.submit {
-    display: none;
-}
-
+/*btn*/
 .btn {
   letter-spacing: 0.1em;
   cursor: pointer;
@@ -90,11 +109,11 @@ body {
 }
 
 /*btn_text*/
-.effect input[value="下载"] {
+.effect {
   transition: all 0.2s ease-out;
   z-index: 2;
 }
-.effect:hover input[value="下载"]:hover{
+.effect:hover {
   letter-spacing: 0.13em;
   color: #333;
 }
@@ -124,7 +143,7 @@ body {
 }
 </style>
 <body>
-<h1 style="margin-bottom: 50px"><img src="https://ae01.alicdn.com/kf/H2fc84859291347418b11091fe0e508b8v.png" style="width: 1.5em;margin-right: .2em;vertical-align: bottom;">GitHub 文件加速</h1>
+<h1 style="margin-bottom: 50px"><img src="https://github.githubassets.com/favicons/favicon.png" style="width: 1.5em;margin-right: .2em;vertical-align: bottom;">GitHub 文件加速</h1>
 <form action="./" method="get" style="padding-bottom: 40px" target="_blank" class="flex">
     <label class="block" style="width: fit-content">
         <input class="block url" name="q" type="text" placeholder="键入Github文件链接"
@@ -132,7 +151,7 @@ body {
         <div class="bar"></div>
     </label>
     <div class="buttons">
-        <a class="btn effect" id=clickBox><span>下载</span></a>
+        <a href="#" class="btn effect" id=clickBox><span>下载</span></a>
         <input class="submit" type="submit" id=submit>
     </div>
 </form>
@@ -148,5 +167,4 @@ function refsInput () {
    domSubmitInput.click();
 } 
 </script>
-</form>
 </html>
