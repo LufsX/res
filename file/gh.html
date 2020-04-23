@@ -2,6 +2,9 @@
 <html lang="zh">
 <head>
     <title>GitHub 文件加速</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 <style>
 html, body {
@@ -22,11 +25,18 @@ body {
 
 h1 {
   text-align: left;
-  color: #444;
+  color: #333;
   letter-spacing: 0.05em;
   margin: 0 0 0.4em;
   font-size: 2em;
   text-align: center;
+  pointer-events: none;
+}
+
+@media (max-width: 500px) {
+        h1 {
+            margin-top: 80px;
+        }
 }
 
 .flex {
@@ -75,14 +85,13 @@ h1 {
   width: 240px;
 }
 
-/*btn*/
 .btn {
   letter-spacing: 0.1em;
   cursor: pointer;
   font-size: 14px;
   font-weight: 400;
-  line-height: 45px;
-  max-width: 160px;
+  line-height: 40px;
+  max-width: 120px;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
@@ -94,34 +103,34 @@ h1 {
 
 /*btn_background*/
 .effect {
-  color: #F2F0FD;
-  border: 2px solid #653ADC;
-  box-shadow:0px 0px 0px 1px #653ADC inset;
-  background-color: #653ADC;
+  color: #FFF;
+  border: 2px solid #000;
+  box-shadow:0px 0px 0px 1px #000 inset;
+  background-color: #000;
   overflow: hidden;
   position: relative;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .effect:hover {
-  border: 2px solid rgb(109, 62, 240);
-  background-color: #F2F0FD;
+  border: 2px solid #666;
+  background-color: #FFF;
   box-shadow:0px 0px 0px 4px #EEE inset;
 }
 
 /*btn_text*/
-.effect {
-  transition: all 0.2s ease-out;
+.effect span {
+  transition: all 0.5s ease-out;
   z-index: 2;
 }
-.effect:hover {
+.effect:hover span{
   letter-spacing: 0.13em;
   color: #333;
 }
 
 /*highlight*/
 .effect:after {
-  background: #F2F0FD;
-  border: 0px solid #653ADC;
+  background: #FFF;
+  border: 0px solid #000;
   content: "";
   height: 155px;
   left: -75px;
@@ -135,18 +144,64 @@ h1 {
   z-index: 1;
 }
 .effect:hover:after {
-  background: #F2F0FD;
+  background: #FFF;
+  border: 20px solid #000;
   opacity: 0;
   left: 120%;
   -webkit-transform: rotate(40deg);
           transform: rotate(40deg);
 }
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000;
+    }
+
+    svg {
+        fill: #FFF;
+    }
+
+    h1 {
+        color: #EEE;
+    }
+
+    .url {
+        background-color: #000;
+    }
+
+/*btn_background*/
+    .effect {
+        color: #000;
+        border: 2px solid #FFF;
+        box-shadow:0px 0px 0px 1px #FFF inset;
+        background-color: #FFF;
+    }
+    .effect:hover {
+        border: 2px solid #EEE;
+        background-color: #000;
+        box-shadow:0px 0px 0px 4px #000 inset;
+    }
+
+    .effect:hover span{
+        letter-spacing: 0.13em;
+        color: #EEE;
+    }
+
+    /*highlight*/
+    .effect:after {
+        background: #000;
+        border: 0px solid #FFF;
+    }
+    .effect:hover:after {
+        background: #000;
+        border: 20px solid #FFF;
+    }
+}
 </style>
 <body>
-<h1 style="margin-bottom: 50px"><svg height="36" viewBox="1 0 16 16" version="1.1" width="46" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub 文件加速</h1>
+<h1 style="margin-bottom: 50px"><svg class="github-svg" height="36" viewBox="1 0 16 16" version="1.1" width="46" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub 文件加速</h1>
 <form action="./" method="get" style="padding-bottom: 40px" target="_blank" class="flex">
     <label class="block" style="width: fit-content">
-        <input class="block url" name="q" type="text" placeholder="键入Github文件链接"
+        <input class="url" name="q" type="text" placeholder="键入 Github 文件链接"
                pattern="^(?:(?:https|http):\/\/)?github\.com\/.+?\/.+?\/(?:releases|archive|blob)\/.+$" required>
         <div class="bar"></div>
     </label>
