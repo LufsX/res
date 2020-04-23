@@ -1,106 +1,129 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
-<style>
-    html, body {
-        width: 100%;
-        margin: 0;
-    }
-
-    html {
-        height: 100%;
-    }
-
-    body {
-        min-height: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    p {
-        word-break: break-all;
-    }
-
-    @media (max-width: 500px) {
-        h1 {
-            margin-top: 80px;
-        }
-    }
-
-    .flex {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .block {
-        display: block;
-        position: relative;
-    }
-
-    .url {
-        font-size: 18px;
-        padding: 10px 10px 10px 5px;
-        position: relative;
-        width: 300px;
-        border: none;
-        border-bottom: 1px solid #bfbfbf;
-    }
-
-    input:focus {
-        outline: none;
-    }
-
-    .bar {
-        content: '';
-        height: 2px;
-        width: 100%;
-        bottom: 0;
-        position: absolute;
-        background: #00bfb3;
-        transition: 0.2s ease transform;
-        -moz-transition: 0.2s ease transform;
-        -webkit-transition: 0.2s ease transform;
-        transform: scaleX(0);
-    }
-
-    .url:focus ~ .bar {
-        transform: scaleX(1);
-    }
-
-    .btn {
-        width: 160px;
-        margin: 30px 0;
-    }
-
-    .tips, .example {
-        color: #7b7b7b;
-        position: relative;
-        align-self: flex-start;
-        margin-left: 7.5em;
-    }
-
-    .tips > p:first-child::before {
-        position: absolute;
-        left: -3em;
-        content: 'PS：';
-        color: #7b7b7b
-    }
-
-    .example > p:first-child::before {
-        position: absolute;
-        left: -7.5em;
-        content: '合法输入示例：';
-        color: #7b7b7b
-    }
-</style>
+<html lang="zh">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>GitHub 文件加速</title>
 </head>
-<body class="flex">
+<style>
+html, body {
+    width: 100%;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    padding: 80px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.url {
+    font-size: 18px;
+    padding: 10px 10px 10px 10px;
+    position: relative;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #bfbfbf;
+    text-align: left;
+    color: #444;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+      flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 2em 0em;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding:  40px 0px;
+  width: 240px;
+}
+
+.submit {
+    display: none;
+}
+
+.btn {
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+/*btn_background*/
+.effect {
+  color: #F2F0FD;
+  border: 2px solid #653ADC;
+  box-shadow:0px 0px 0px 1px #653ADC inset;
+  background-color: #653ADC;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.effect:hover {
+  border: 2px solid rgb(109, 62, 240);
+  background-color: #F2F0FD;
+  box-shadow:0px 0px 0px 4px #EEE inset;
+}
+
+/*btn_text*/
+.effect input[value="下载"] {
+  transition: all 0.2s ease-out;
+  z-index: 2;
+}
+.effect:hover input[value="下载"]:hover{
+  letter-spacing: 0.13em;
+  color: #333;
+}
+
+/*highlight*/
+.effect:after {
+  background: #F2F0FD;
+  border: 0px solid #653ADC;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: .8;
+  position: absolute;
+  top: -50px;
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+  width: 50px;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);/*easeOutCirc*/
+  z-index: 1;
+}
+.effect:hover:after {
+  background: #F2F0FD;
+  opacity: 0;
+  left: 120%;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+</style>
+<body>
 <h1 style="margin-bottom: 50px"><img src="https://ae01.alicdn.com/kf/H2fc84859291347418b11091fe0e508b8v.png" style="width: 1.5em;margin-right: .2em;vertical-align: bottom;">GitHub 文件加速</h1>
 <form action="./" method="get" style="padding-bottom: 40px" target="_blank" class="flex">
     <label class="block" style="width: fit-content">
@@ -108,20 +131,22 @@
                pattern="^(?:(?:https|http):\/\/)?github\.com\/.+?\/.+?\/(?:releases|archive|blob)\/.+$" required>
         <div class="bar"></div>
     </label>
-    <input class="block btn" type="submit" value="下载">
-    <div class="tips"><p>GitHub文件链接带不带协议头都可以，支持release、archive以及文件，右键复制出来的链接都是符合标准的，更多用法、clone加速请参考<a href="https://hunsh.net/archives/23/">这篇文章</a>。</p>
-        <p>release、archive使用cf加速，文件会跳转至JsDelivr</p>
-        <p>注意，不支持项目文件夹</p></div>
-    <div class="example">
-        <p>分支源码：https://github.com/hunshcn/project/archive/master.zip</p>
-        <p>release源码：https://github.com/hunshcn/project/archive/v0.1.0.tar.gz</p>
-        <p>release文件：https://github.com/hunshcn/project/releases/download/v0.1.0/example.zip</p>
-        <p>分支文件：https://github.com/hunshcn/project/blob/master/filename</p>
+    <div class="buttons">
+        <a class="btn effect" id=clickBox><span>下载</span></a>
+        <input class="submit" type="submit" id=submit>
     </div>
 </form>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.8/dist/spectre.min.css">
-</p>
+
 </body>
+<script>
+var domUploadBox = document.getElementById('clickBox')
+var domSubmitInput = document.getElementById('submit')
+
+domUploadBox.addEventListener('click', refsInput)
+
+function refsInput () {
+   domSubmitInput.click();
+} 
+</script>
+</form>
 </html>
-
-
