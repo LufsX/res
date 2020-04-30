@@ -21,25 +21,6 @@
     />
     <meta name="format-detection" content="telephone=no" />
     <style>
-      @media (prefers-color-scheme: dark) {
-        body {
-          background-color: #121212;
-          color: #e1e1e1;
-        }
-
-        a,
-        a:visited {
-          color: #369fe4;
-        }
-
-        a:active,
-        a:focus,
-        a:hover {
-          color: #369fe4;
-          opacity: 0.75;
-        }
-      }
-
       .container {
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
@@ -57,6 +38,8 @@
         display: flex;
         flex-direction: column;
         padding: 0 20px;
+        background-color: #f1f9fa;
+        color: #000;
       }
 
       .main {
@@ -80,7 +63,7 @@
       }
 
       .code {
-        font-size: 28px;
+        font-size: 30px;
         font-weight: 500;
         display: block;
         text-align: center;
@@ -103,8 +86,43 @@
         padding-left: 20px;
       }
 
+	  a:visited,
+	  a:link {
+        color: #7566a8;
+      }
+
+      a:active,
+      a:focus,
+      a:hover {
+        color: #7065A3;
+        opacity: 0.75;
+      }
+
       main {
         text-align: center;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .container {
+          background-color: black;
+          color: #e1e1e1;
+        }
+
+        .a:visited {
+          color: #8b81c3;
+        }
+
+        a:active,
+        a:focus,
+        a:hover {
+          color: #8174b9;
+          opacity: 0.75;
+        }
+
+        a,
+        a:visited {
+          color: #7575ab;
+        }
       }
     </style>
   </head>
