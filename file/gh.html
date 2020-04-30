@@ -1,243 +1,273 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
+  <head>
     <title>GitHub 文件加速</title>
-    <link class="github-icon" rel="icon" href="https://cdn.jsdelivr.net/gh/Lufsx/Res@master/file/github-icon.svg">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-</head>
-<style>
-html, body {
-    width: 100%;
-    margin: 0;
-}
-
-html {
-    height: 100%;
-}
-
-body {
-    min-height: 100%;
-    padding: 80px;
-    box-sizing: border-box;
-    background-color: #fff;
-}
-
-h1 {
-    text-align: left;
-    color: #333;
-    letter-spacing: 0.05em;
-    font-size: 2em;
-    text-align: center;
-    pointer-events: none;
-}
-
-.flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/*submit hidden*/
-.submit {
-    display: none;
-}
-
-.block {
-    display: block;
-    position: relative;
-}
-
-.url {
-    font-size: 18px;
-    padding: 10px 10px 10px 10px;
-    position: relative;
-    width: 300px;
-    border: none;
-    border-bottom: 1px solid #bfbfbf;
-    text-align: left;
-    color: #444;
-}
-
-input:focus {
-    outline: none;
-}
-
-/*buttons*/
-.buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    padding: 2em 0em;
-}
-
-.container {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding:  40px 0px;
-    width: 240px;
-}
-
-.btn {
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 40px;
-    max-width: 120px;
-    position: relative;
-      text-decoration: none;
-    text-transform: uppercase;
-    width: 100%;
-}
-.btn:hover {
-    text-decoration: none;
-}
-
-/*btn_background*/
-.effect {
-    color: #FFF;
-    border: 2px solid #000;
-    box-shadow:0px 0px 0px 1px #000 inset;
-    background-color: #000;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.5s ease-in-out;
-}
-.effect:hover {
-    border: 2px solid #666;
-    background-color: #FFF;
-    box-shadow:0px 0px 0px 4px #EEE inset;
-}
-
-/*btn_text*/
-.effect span {
-    transition: all 0.5s ease-out;
-    z-index: 2;
-}
-.effect:hover span{
-    letter-spacing: 0.13em;
-    color: #333;
-}
-
-/*highlight*/
-.effect:after {
-    background: #FFF;
-    border: 0px solid #000;
-    content: "";
-    height: 155px;
-    left: -75px;
-    opacity: .8;
-    position: absolute;
-    top: -50px;
-    -webkit-transform: rotate(35deg);
-            transform: rotate(35deg);
-    width: 50px;
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);/*easeOutCirc*/
-    z-index: 1;
-}
-.effect:hover:after {
-    background: #FFF;
-    border: 20px solid #000;
-    opacity: 0;
-    left: 120%;
-    -webkit-transform: rotate(40deg);
-            transform: rotate(40deg);
-}
-
-/*mobile*/
-@media (max-width: 500px) {
-        h1 {
-            margin-top: 80px;
-        }
-}
-
-/*darkmode support*/
-@media (prefers-color-scheme: dark) {
+    <link
+      class="github-icon"
+      rel="icon"
+      href="https://cdn.jsdelivr.net/gh/Lufsx/Res@master/file/github-icon.svg"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  </head>
+  <style>
+    html,
     body {
-        background-color: #000;
+      width: 100%;
+      margin: 0;
     }
 
-    svg {
-        fill: #FFF;
+    html {
+      height: 100%;
+    }
+
+    body {
+      min-height: 100%;
+      padding: 80px;
+      box-sizing: border-box;
+      background-color: #fff;
     }
 
     h1 {
-        color: #EEE;
+      text-align: left;
+      color: #333;
+      letter-spacing: 0.05em;
+      font-size: 2em;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /*submit hidden*/
+    .submit {
+      display: none;
+    }
+
+    .block {
+      display: block;
+      position: relative;
     }
 
     .url {
-        background-color: #000;
+      font-size: 18px;
+      padding: 10px 10px 10px 10px;
+      position: relative;
+      width: 300px;
+      border: none;
+      border-bottom: 1px solid #bfbfbf;
+      text-align: left;
+      color: #444;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    /*buttons*/
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      padding: 2em 0em;
+    }
+
+    .container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 0px;
+      width: 240px;
+    }
+
+    .btn {
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 40px;
+      max-width: 120px;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+      width: 100%;
+    }
+    .btn:hover {
+      text-decoration: none;
     }
 
     /*btn_background*/
     .effect {
-        color: #000;
-        border: 2px solid #FFF;
-        box-shadow:0px 0px 0px 1px #FFF inset;
-        background-color: #FFF;
+      color: #fff;
+      border: 2px solid #000;
+      box-shadow: 0px 0px 0px 1px #000 inset;
+      background-color: #000;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.5s ease-in-out;
     }
     .effect:hover {
-        border: 2px solid #EEE;
-        background-color: #000;
-        box-shadow:0px 0px 0px 4px #000 inset;
+      border: 2px solid #666;
+      background-color: #fff;
+      box-shadow: 0px 0px 0px 4px #eee inset;
     }
 
-    .effect:hover span{
-        letter-spacing: 0.13em;
-        color: #EEE;
+    /*btn_text*/
+    .effect span {
+      transition: all 0.5s ease-out;
+      z-index: 2;
+    }
+    .effect:hover span {
+      letter-spacing: 0.13em;
+      color: #333;
     }
 
     /*highlight*/
     .effect:after {
-        background: #000;
-        border: 0px solid #FFF;
+      background: #fff;
+      border: 0px solid #000;
+      content: "";
+      height: 155px;
+      left: -75px;
+      opacity: 0.8;
+      position: absolute;
+      top: -50px;
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+      width: 50px;
+      transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1); /*easeOutCirc*/
+      z-index: 1;
     }
     .effect:hover:after {
-        background: #000;
-        border: 20px solid #FFF;
+      background: #fff;
+      border: 20px solid #000;
+      opacity: 0;
+      left: 120%;
+      -webkit-transform: rotate(40deg);
+      transform: rotate(40deg);
     }
-}
-</style>
-<body>
-<h1 style="margin-bottom: 50px"><svg class="github-svg" height="36" viewBox="1 0 16 16" version="1.1" width="46" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub 文件加速</h1>
-<form action="./" method="get" style="padding-bottom: 40px" target="_blank" class="flex">
-    <label class="block" style="width: fit-content">
-        <input class="url" name="q" type="text" placeholder="键入 Github 文件链接"
-               pattern="^(?:(?:https|http):\/\/)?github\.com\/.+?\/.+?\/(?:releases|archive|blob)\/.+$" required>
+
+    /*mobile*/
+    @media (max-width: 500px) {
+      h1 {
+        margin-top: 80px;
+      }
+    }
+
+    /*darkmode support*/
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #000;
+      }
+
+      svg {
+        fill: #fff;
+      }
+
+      h1 {
+        color: #eee;
+      }
+
+      .url {
+        background-color: #000;
+      }
+
+      /*btn_background*/
+      .effect {
+        color: #000;
+        border: 2px solid #fff;
+        box-shadow: 0px 0px 0px 1px #fff inset;
+        background-color: #fff;
+      }
+      .effect:hover {
+        border: 2px solid #eee;
+        background-color: #000;
+        box-shadow: 0px 0px 0px 4px #000 inset;
+      }
+
+      .effect:hover span {
+        letter-spacing: 0.13em;
+        color: #eee;
+      }
+
+      /*highlight*/
+      .effect:after {
+        background: #000;
+        border: 0px solid #fff;
+      }
+      .effect:hover:after {
+        background: #000;
+        border: 20px solid #fff;
+      }
+    }
+  </style>
+  <body>
+    <h1 style="margin-bottom: 50px;">
+      <svg
+        class="github-svg"
+        height="36"
+        viewBox="1 0 16 16"
+        version="1.1"
+        width="46"
+        aria-hidden="true"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+        ></path></svg
+      >GitHub 文件加速
+    </h1>
+    <form
+      action="./"
+      method="get"
+      style="padding-bottom: 40px;"
+      target="_blank"
+      class="flex"
+    >
+      <label class="block" style="width: fit-content;">
+        <input
+          class="url"
+          name="q"
+          type="text"
+          placeholder="键入 Github 文件链接"
+          pattern="^(?:(?:https|http):\/\/)?github\.com\/.+?\/.+?\/(?:releases|archive|blob)\/.+$"
+          required
+        />
         <div class="bar"></div>
-    </label>
-    <div class="buttons">
-        <a href="#" class="btn effect" id=clickBox><span>下载</span></a>
-        <input class="submit" type="submit" id=submit>
-    </div>
-</form>
+      </label>
+      <div class="buttons">
+        <a href="#" class="btn effect" id="clickBox"><span>下载</span></a>
+        <input class="submit" type="submit" id="submit" />
+      </div>
+    </form>
+  </body>
+  <script>
+    var domClickBox = document.getElementById("clickBox");
+    var domSubmitInput = document.getElementById("submit");
 
-</body>
-<script>
-var domClickBox = document.getElementById('clickBox')
-var domSubmitInput = document.getElementById('submit')
+    domClickBox.addEventListener("click", refsInput);
 
-domClickBox.addEventListener('click', refsInput)
+    function refsInput() {
+      sleep(300).then(() => {
+        domSubmitInput.click();
+      });
+    }
 
-function refsInput () {
-    sleep(300).then(() => {
-    domSubmitInput.click();
-})
-}
-
-function sleep (time) {
-  return new Promise((resolve) => setTimeout(resolve, time));
-}
-</script>
+    function sleep(time) {
+      return new Promise((resolve) => setTimeout(resolve, time));
+    }
+  </script>
 </html>
