@@ -36,11 +36,30 @@
       font-size: 2em;
       text-align: center;
       pointer-events: none;
+      font-weight: 700;
+      font-size: 28px;
     }
 
     p {
       margin: 0 0 1.2rem;
       color: #111;
+    }
+
+    h1,
+    h2,
+    h3,
+    text,
+    p {
+      font-family: Miriam Libre, -apple-system, BlinkMacSystemFont, Segoe UI,
+        Helvetica, Arial, PingFang SC, Noto Sans CJK SC, Sarasa Gothic SC,
+        Microsoft YaHei, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    }
+
+    footer {
+      padding: 1.5rem 1.2rem 1.2rem;
+      font-size: 0.75rem;
+      color: #999;
+      text-align: center;
     }
 
     .flex {
@@ -110,6 +129,7 @@
       text-transform: uppercase;
       width: 100%;
     }
+
     .btn:hover {
       text-decoration: none;
     }
@@ -124,6 +144,7 @@
       position: relative;
       transition: all 0.5s ease-in-out;
     }
+
     .effect:hover {
       border: 2px solid #666;
       background-color: #fff;
@@ -135,6 +156,7 @@
       transition: all 0.5s ease-out;
       z-index: 2;
     }
+
     .effect:hover span {
       letter-spacing: 0.13em;
       color: #333;
@@ -153,9 +175,11 @@
       -webkit-transform: rotate(35deg);
       transform: rotate(35deg);
       width: 50px;
-      transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1); /*easeOutCirc*/
+      transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+      /*easeOutCirc*/
       z-index: 1;
     }
+
     .effect:hover:after {
       background: #fff;
       border: 20px solid #000;
@@ -197,6 +221,7 @@
         box-shadow: 0px 0px 0px 1px #fff inset;
         background-color: #fff;
       }
+
       .effect:hover {
         border: 2px solid #eee;
         background-color: #000;
@@ -213,12 +238,14 @@
         background: #000;
         border: 0px solid #fff;
       }
+
       .effect:hover:after {
         background: #000;
         border: 20px solid #fff;
       }
     }
   </style>
+
   <body>
     <h1 style="margin-bottom: 50px;">
       <svg
@@ -255,7 +282,7 @@
         <div class="bar"></div>
       </label>
       <div class="buttons">
-        <a href="#" class="btn effect" id="clickBox"><span>下载</span></a>
+        <a href="#" class="btn effect" id="clickBox"><span><text>下载</text></span></a>
         <input class="submit" type="submit" id="submit" />
       </div>
     </form>
