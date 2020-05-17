@@ -1,7 +1,7 @@
 /**
-修改于 20.04.12
-适配代码高亮
-优化 Post 配色
+修改于 20.05.17
+取消适配代码高亮
+优化分割线颜色
 **/
 @media (prefers-color-scheme: dark) {
   body {
@@ -279,7 +279,7 @@
     overflow: hidden;
     margin: 0.8rem 0;
     background: transparent;
-    background-color: #e1e4e8;
+    background-color: #666666;
     border-bottom: 1px solid #58636d;
     border: 0;
   }
@@ -415,86 +415,6 @@
 
   /**
  * =========================================================
- * ************   HighLight   ************
- * =========================================================
- */
-
-  .highlight .comment,
-  .highlight .quote {
-    color: #78877d;
-  }
-
-  .highlight .attribute,
-  .highlight .link,
-  .highlight .name,
-  .highlight .regexp,
-  .highlight .selector-class,
-  .highlight .selector-id,
-  .highlight .tag,
-  .highlight .template-variable,
-  .highlight .variable {
-    color: #b16139;
-  }
-
-  .highlight .built_in,
-  .highlight .builtin-name,
-  .highlight .literal,
-  .highlight .meta,
-  .highlight .number,
-  .highlight .params,
-  .highlight .type {
-    color: #9f713c;
-  }
-
-  .highlight .bullet,
-  .highlight .string,
-  .highlight .symbol {
-    color: #489963;
-  }
-
-  .highlight .section,
-  .highlight .title {
-    color: #478c90;
-  }
-
-  .highlight .keyword,
-  .highlight .selector-tag {
-    color: #55859b;
-  }
-
-  .highlight .addition,
-  .highlight .deletion {
-    color: #171c19;
-    display: inline-block;
-    width: 100%;
-  }
-
-  .highlight .deletion {
-    background-color: #b16139;
-  }
-
-  .highlight .addition {
-    background-color: #489963;
-  }
-
-  .highlight {
-    display: block;
-    overflow-x: auto;
-    background: #252525;
-    color: #666;
-    padding: 0.5em;
-  }
-
-  .highlight .emphasis {
-    font-style: italic;
-  }
-
-  .highlight .strong {
-    font-weight: 700;
-  }
-
-  /**
- * =========================================================
  * ************   Encrypt   ************
  * =========================================================
  */
@@ -515,4 +435,7 @@
 更改主题颜色
 20.03.24
 优化了配色
+20.04.12
+适配代码高亮
+优化 Post 配色
 **/
