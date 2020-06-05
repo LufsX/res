@@ -1,5 +1,6 @@
 /**
-Test
+修改于 20.06.06
+统一配色
 **/
 
 body {
@@ -180,7 +181,7 @@ header a:visited {
 }
 
 .card {
-  background: #191a1a;
+  background: #191919;
 }
 /**
  * =========================================================
@@ -242,7 +243,7 @@ a.category-link {
 }
 
 #post-card .card-footer.post-comment {
-  background-color: #191a1a;
+  background-color: #191919;
 }
 
 /**
@@ -411,6 +412,10 @@ a.timeline-tile-title span:hover {
   background-color: #383838;
 }
 
+#dsqjs footer {
+  border-top: 2px solid #707070;
+}
+
 /**
  * =========================================================
  * ************   Encrypt   ************
@@ -418,79 +423,17 @@ a.timeline-tile-title span:hover {
  */
 
 #hbePass {
-  background: #191a1a;
+  background: #191919;
 }
 
 /**
  * =========================================================
- * ************   Highlight   ************
+ * ************   Others   ************
  * =========================================================
  */
 
-.highlight {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #abb2bf;
-  background: #282c34;
-}
-.highlight .comment,
-.highlight .quote {
-  color: #5c6370;
-  font-style: italic;
-}
-.highlight .doctag,
-.highlight .formula,
-.highlight .keyword {
-  color: #c678dd;
-}
-.highlight .deletion,
-.highlight .name,
-.highlight .section,
-.highlight .selector-tag,
-.highlight .subst {
-  color: #e06c75;
-}
-.highlight .literal {
-  color: #56b6c2;
-}
-.highlight .addition,
-.highlight .attribute,
-.highlight .meta-string,
-.highlight .regexp,
-.highlight .string {
-  color: #98c379;
-}
-.highlight .built_in,
-.highlight .class .highlight .title {
-  color: #e6c07b;
-}
-.highlight .attr,
-.highlight .number,
-.highlight .selector-attr,
-.highlight .selector-class,
-.highlight .selector-pseudo,
-.highlight .template-variable,
-.highlight .type,
-.highlight .variable {
-  color: #d19a66;
-}
-.highlight .bullet,
-.highlight .link,
-.highlight .meta,
-.highlight .selector-id,
-.highlight .symbol,
-.highlight .title {
-  color: #61aeee;
-}
-.highlight .emphasis {
-  font-style: italic;
-}
-.highlight .strong {
-  font-weight: 700;
-}
-.highlight .link {
-  text-decoration: underline;
+.bg-gray {
+  background: #191919 !important;
 }
 
 /**
