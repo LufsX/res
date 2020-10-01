@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
   <head>
-    <title>GitHub 文件加速</title>
+    <title>GitHub 加速</title>
     <link
       class="github-icon"
       rel="icon"
@@ -15,7 +15,43 @@
       window.ga_api = "https://cfga.lufs.workers.dev/";
     </script>
     <script async>
-      !function(t,e,n){var a=t.screen,r=encodeURIComponent,o=Math.max,i=t.performance,d=i&&i.timing,c=function(t){return isNaN(t)||t==1/0||t<0?void 0:t};function g(){var i=["ga="+t.ga_tid,"dt="+r(e.title),"de="+r(e.characterSet||e.charset),"dr="+r(e.referrer),"ul="+(n.language||n.browserLanguage||n.userLanguage),"sd="+a.colorDepth+"-bit","sr="+a.width+"x"+a.height,"vp="+o(e.documentElement.clientWidth,t.innerWidth||0)+"x"+o(e.documentElement.clientHeight,t.innerHeight||0),"plt="+c(d.loadEventStart-d.navigationStart||0),"dns="+c(d.domainLookupEnd-d.domainLookupStart||0),"pdt="+c(d.responseEnd-d.responseStart||0),"rrt="+c(d.redirectEnd-d.redirectStart||0),"tcp="+c(d.connectEnd-d.connectStart||0),"srt="+c(d.responseStart-d.requestStart||0),"dit="+c(d.domInteractive-d.domLoading||0),"clt="+c(d.domContentLoadedEventStart-d.navigationStart||0),"z="+Date.now()];t.__ga_img=new Image,t.__ga_img.src=t.ga_api+"?"+i.join("&")}"complete"===e.readyState?g():t.addEventListener("load",g)}(window,document,navigator);
+      !(function (t, e, n) {
+        var a = t.screen,
+          r = encodeURIComponent,
+          o = Math.max,
+          i = t.performance,
+          d = i && i.timing,
+          c = function (t) {
+            return isNaN(t) || t == 1 / 0 || t < 0 ? void 0 : t;
+          };
+        function g() {
+          var i = [
+            "ga=" + t.ga_tid,
+            "dt=" + r(e.title),
+            "de=" + r(e.characterSet || e.charset),
+            "dr=" + r(e.referrer),
+            "ul=" + (n.language || n.browserLanguage || n.userLanguage),
+            "sd=" + a.colorDepth + "-bit",
+            "sr=" + a.width + "x" + a.height,
+            "vp=" +
+              o(e.documentElement.clientWidth, t.innerWidth || 0) +
+              "x" +
+              o(e.documentElement.clientHeight, t.innerHeight || 0),
+            "plt=" + c(d.loadEventStart - d.navigationStart || 0),
+            "dns=" + c(d.domainLookupEnd - d.domainLookupStart || 0),
+            "pdt=" + c(d.responseEnd - d.responseStart || 0),
+            "rrt=" + c(d.redirectEnd - d.redirectStart || 0),
+            "tcp=" + c(d.connectEnd - d.connectStart || 0),
+            "srt=" + c(d.responseStart - d.requestStart || 0),
+            "dit=" + c(d.domInteractive - d.domLoading || 0),
+            "clt=" + c(d.domContentLoadedEventStart - d.navigationStart || 0),
+            "z=" + Date.now(),
+          ];
+          (t.__ga_img = new Image()),
+            (t.__ga_img.src = t.ga_api + "?" + i.join("&"));
+        }
+        "complete" === e.readyState ? g() : t.addEventListener("load", g);
+      })(window, document, navigator);
     </script>
   </head>
   <style>
@@ -213,10 +249,6 @@
         background-color: #000;
       }
 
-      svg {
-        fill: #fff;
-      }
-
       h1 {
         color: #eee;
       }
@@ -269,7 +301,7 @@
         margin: 0 auto 0 auto;
       "
     >
-      <h1 style="margin-bottom: 50px; padding-top: 80px;">
+      <h1 style="margin-bottom: 50px; padding-top: 80px">
         <svg
           class="github-svg"
           height="36"
@@ -288,14 +320,15 @@
       <form
         action="./"
         method="get"
-        style="padding-bottom: 40px;"
+        style="padding-bottom: 40px"
         target="_blank"
         class="flex"
       >
-        <label class="block" style="width: fit-content;">
+        <label class="block" style="width: fit-content">
           <input
             class="url"
-            name="q"
+            name="url"
+            id="url"
             type="text"
             placeholder="键入 Github 文件链接"
             pattern="^(?:(?:https|http):\/\/)?github\.com\/.+?\/.+?\/(?:releases|archive|blob)\/.+$"
@@ -304,19 +337,17 @@
           <div class="bar"></div>
         </label>
         <div class="buttons">
-          <a href="#" class="btn effect" id="clickBox"
-            ><span><text>下载</text></span></a
-          >
-          <input type="submit" id="submit" style="display: none;"/>
+          <a class="btn effect" id="clickBox"><span>下载</span></a>
+          <input type="submit" id="submit" style="display: none" />
         </div>
       </form>
     </div>
     <div id="footer">
-          <a href="https://github.com/hunshcn/gh-proxy">
-            <img
-              src="https://img.shields.io/badge/Base%20on-gh%20proxy-black?logo=github&style=for-the-badge&labelColor=24292e&longCache=true"
-            />
-          </a>
+      <a href="https://github.com/hunshcn/gh-proxy">
+        <img
+          src="https://img.shields.io/badge/Base%20on-gh%20proxy-black?logo=github&style=for-the-badge&labelColor=24292e&longCache=true"
+        />
+      </a>
     </div>
   </body>
   <script>
@@ -328,6 +359,9 @@
     function refsInput() {
       sleep(300).then(() => {
         domSubmitInput.click();
+      });
+      sleep(1000).then(() => {
+        document.getElementById("url").value = "";
       });
     }
 
