@@ -16,4 +16,4 @@ done < ./tmp.list
 
 rm -rf ./tmp.list
 echo | awk "{print $sum/$num}"
-echo | awk "{print 1/($sum/$num)}"
+echo | awk "{print $num/$sum}"
