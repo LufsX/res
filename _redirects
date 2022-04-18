@@ -1,3 +1,1 @@
-/file/squirrel/Squirrel-0.15.2-a9829e8.pkg https://storage.isteed.cc/api/raw/?path=/MacSoftware/Squirrel/Squirrel-0.15.2-707ecc0.pkg 301
-/file/squirrel/Squirrel-0.15.2-a9829e8.pkg https://storage.isteed.cc/api/raw/?path=/MacSoftware/Squirrel/Squirrel-0.15.2-707ecc0-arm64.pkg 301
-/file/squirrel/Squirrel-0.15.2-a9829e8.pkg https://storage.isteed.cc/api/raw/?path=/MacSoftware/Squirrel/Squirrel-0.15.2-707ecc0-x86.pkg 301
+/file/squirrel/* https://storage.isteed.cc/api/raw/?path=/MacSoftware/Squirrel/:splat 301
