@@ -1,4 +1,0 @@
-img/**/*.jpg filter=lfs diff=lfs merge=lfs -text
-img/**/*.png filter=lfs diff=lfs merge=lfs -text
-file/squirrel/*.pkg filter=lfs diff=lfs merge=lfs -text
-img/**/*.webp filter=lfs diff=lfs merge=lfs -text
