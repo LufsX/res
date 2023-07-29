@@ -1,11 +1,22 @@
 {
-  "version": 2,
-  "routes": [
-    { "handle": "filesystem" },
+  "headers": [
     {
-      "src": "/file/squirrel/(.*)",
-      "status": 301,
-      "headers": { "Location": "https://storage.isteed.cc/api/raw/?path=/MacSoftware/Squirrel/$1" }
+      "source": "(.*).(js|css|png|jpg|jpeg|webp|ico|svg)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-max-age=2592000, max-age=86400, stale-while-revalidate=60"
+        }
+      ]
+    },
+    {
+      "source": "(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     }
   ],
   "github": {
