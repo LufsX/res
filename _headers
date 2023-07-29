@@ -1,3 +1,4 @@
 /*
   Access-Control-Allow-Origin: *
   Access-Control-Expose-Headers: *
+  Cache-Control: public, max-age=7200, stale-while-revalidate=60
