@@ -7,6 +7,8 @@ import argparse
 
 def convert_to_webp(source_file, compare_mode=False):
     webp_file = os.path.splitext(source_file)[0] + ".webp"
+    rel_path = os.path.relpath(webp_file, work_dir)
+    source_rel_path = os.path.relpath(source_file, work_dir)
 
     if os.path.exists(webp_file):
         if compare_mode:
@@ -22,13 +24,15 @@ def convert_to_webp(source_file, compare_mode=False):
                 if converted_size < original_size:
                     with open(webp_file, "wb") as f:
                         f.write(converted_image_stream.getvalue())
-                    print(f"Replaced: {webp_file} with a smaller WebP file.")
+                    print(
+                        f"\033[34mReplaced\033[0m: {rel_path} with a smaller WebP file."
+                    )
                 else:
                     print(
-                        f"Skipped replacement: The WebP file is not smaller than the existing one. ({converted_size} >= {original_size})"
+                        f"\033[33mSkipped\033[0m: The WebP file is not smaller (\033[31m{converted_size}\033[0m >= \033[32m{original_size}\033[0m) than exists {rel_path}"
                     )
         else:
-            print(f"WebP file already exists: {webp_file}. Skipping...")
+            print(f"\033[33mSkipped\033[0m: WebP file already exists: {rel_path}")
         return
 
     try:
@@ -43,14 +47,14 @@ def convert_to_webp(source_file, compare_mode=False):
 
             if converted_size >= original_size:
                 print(
-                    f"Conversion skipped: The WebP file is not smaller. ({converted_size} >= {original_size})"
+                    f"\033[33mSkipped\033[0m: The WebP file is not smaller (\033[31m{converted_size}\033[0m >= \033[32m{original_size}\033[0m) than {source_rel_path}"
                 )
             else:
                 with open(webp_file, "wb") as f:
                     f.write(converted_image_stream.getvalue())
-                print(f"Converted: {source_file} -> {webp_file}")
+                print(f"\033[32mConverted\033[0m: {source_file} -> {rel_path}")
     except Exception as e:
-        print(f"Error converting {source_file}: {e}")
+        print(f"Error: converting {source_file} occured {e}")
 
 
 def convert_images_in_directory(directory, compare_mode=False):
